@@ -18,7 +18,7 @@ app.use(
 app.use("/", homeRoute);
 app.use("/api", apiRoute);
 
-app.listen(5000, () => {
+app.listen(8080, () => {
 	console.log("Server is running");
 });
 
