@@ -1,4 +1,4 @@
-const db = require('../knex.db');
+// const db = require('../knex.db');
 
 
 exports.sayHello = (req, res) => {
