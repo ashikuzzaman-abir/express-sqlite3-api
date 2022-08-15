@@ -47,6 +47,7 @@ app.get('/', (req, res) => {
 		title: 'Express',
 		data: "Hi guys",
 		cpus: os.cpus().length,
+		pid: process.pid
 	});
 	cluster.worker.kill();
 })
