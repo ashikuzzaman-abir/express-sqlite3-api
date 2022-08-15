@@ -76,13 +76,13 @@ if (cluster.isMaster) {
 		cluster.fork();
 	});
 } else {
-	app.listen(process.env.PORT || 3000, () => {
-		console.log(
-			`\t🚀running on--->\t worker:: ${process.pid}\t\t||\tport:: ${
-				process.env.PORT || 3000
-			}`
-		);
-	});
+	// app.listen(process.env.PORT || 3000, () => {
+	// 	console.log(
+	// 		`\t🚀running on--->\t worker:: ${process.pid}\t\t||\tport:: ${
+	// 			process.env.PORT || 3000
+	// 		}`
+	// 	);
+	// });
 }
 } catch(err){
 	if (err) throw err;
