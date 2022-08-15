@@ -1,5 +1,6 @@
 require("dotenv").config();
 const express = require("express");
+const path = require("path");
 
 const os= require("os");
 const cluster = require("cluster");
@@ -7,6 +8,7 @@ const cluster = require("cluster");
 const app = express({
     
 });
+app.set("views", path.join(__dirname, "/views"));
 app.set("view engine", "ejs");
 
 const morgan = require("morgan");
@@ -37,16 +39,17 @@ app.use(morgan( (tokens, req, res) => {
 }));
 
 //routes middle
-app.use("/", homeRoute);
+// app.use("/", homeRoute);
 app.use("/api", apiRoute);
 
-// app.get('/', (req, res) => {
-// 	res.render('index', {
-// 		title: 'Express',
-// 		data: "Hi guys",
-// 	});
-// 	cluster.worker.kill();
-// })
+app.get('/', (req, res) => {
+	res.render('index', {
+		title: 'Express',
+		data: "Hi guys",
+		cpus: os.cpus().length,
+	});
+	cluster.worker.kill();
+})
 
 
 
