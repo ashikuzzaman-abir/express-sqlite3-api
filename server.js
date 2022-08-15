@@ -37,16 +37,16 @@ app.use(morgan( (tokens, req, res) => {
 }));
 
 //routes middle
-// app.use("/", homeRoute);
+app.use("/", homeRoute);
 app.use("/api", apiRoute);
 
-app.get('/', (req, res) => {
-	res.render('index', {
-		title: 'Express',
-		data: "Hi guys",
-	});
-	cluster.worker.kill();
-})
+// app.get('/', (req, res) => {
+// 	res.render('index', {
+// 		title: 'Express',
+// 		data: "Hi guys",
+// 	});
+// 	cluster.worker.kill();
+// })
 
 
 
